@@ -1,6 +1,4 @@
-FROM scratch
-
-COPY tmp /tmp
+FROM chromedp/headless-shell:latest
 
 COPY weibo-cookie-renewer /
 
