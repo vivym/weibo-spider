@@ -32,7 +32,7 @@ build: clean
 
 .PHONY: release
 release: clean
-	@mkdir build
+	@mkdir -p build/tmp
 
 	@echo
 	@echo ---------------------------------------------------------------

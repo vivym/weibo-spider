@@ -1,6 +1,6 @@
 FROM scratch
 
-RUN mkdir /tmp
+COPY tmp /tmp
 
 COPY weibo-cookie-renewer /
 
