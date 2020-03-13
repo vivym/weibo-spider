@@ -11,11 +11,8 @@ import (
 
 	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/chromedp"
-
-	"github.com/go-redis/redis/v7"
-
 	"github.com/getsentry/sentry-go"
-
+	"github.com/go-redis/redis/v7"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 )
@@ -84,7 +81,6 @@ func main() {
 		log.Fatalf("get cookie from redis: %s=%s", key, err)
 	}
 
-	// rawCookies := `_s_tentry=-; Apache=2738506627573.054.1583602904976; SINAGLOBAL=2738506627573.054.1583602904976; TC-V5-G0=4de7df00d4dc12eb0897c97413797808; ULV=1583602905114:1:1:1:2738506627573.054.1583602904976:; UOR=,,www.cnblogs.com; Ugrow-G0=e1a5a1aae05361d646241e28c550f987; login_sid_t=2502b18acef56db2b0f075265b31e724; cross_origin_proto=SSL; wb_view_log=1440*9002; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WF6Wjx-ufIVS5xnBo2216SM5JpX5K2hUgL.FoM01KM0S02pSKM2dJLoIEBLxK-LB--L1h.LxK-LBo5L12qLxKBLBonLBoqLxK.L1h2L1KMt; ALF=1615658708; SSOLoginState=1584122709; SCF=AjxQB8pXJEmLM4RU1JQNK3aD7jaTlGuPVVnBubqpuBjaxIuPQio0GloKvkPKRFHAnAd2_srL0sI3SaJg7AvXy0Y.; SUB=_2A25zb7sFDeRhGeFN4lUS9y_NzjuIHXVQHKvNrDV8PUNbmtAKLVXykW9NQ7ow0zcE5GQF-EBheHQYjkpGWJFQm8ZZ; SUHB=0auABYNZAq4GHO; un=13036760718; wvr=6; wb_view_log_7397371157=1440*9002; WBtopGlobal_register_version=3d5b6de7399dfbdb; TC-Page-G0=45685168db6903150ce64a1b7437dbbb|1584123446|1584123446; webim_unReadCount=%7B%22time%22%3A1584124352583%2C%22dm_pub_total%22%3A1%2C%22chat_group_client%22%3A0%2C%22allcountNum%22%3A37%2C%22msgbox%22%3A0%7D`
 	cookies := parsRawCookies(rawCookies)
 	if len(cookies) == 0 {
 		log.Fatalf("invalid rawCookies: %s", rawCookies)

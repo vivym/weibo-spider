@@ -2,41 +2,29 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   namespace: public-api
-  name: weibo-spider
+  name: weibo-cookie-renewer
   labels:
-    app: weibo-spider
+    app: weibo-cookie-renewer
 spec:
-  schedule: "0 */2 * * *"
+  schedule: "30 * * * *"
   jobTemplate:
     spec:
       template:
         metadata:
           labels:
-            app: weibo-spider
+            app: weibo-cookie-renewer
         spec:
           imagePullSecrets:
             - name: registry-secret
           containers:
-            - name: weibo-spider
+            - name: weibo-cookie-renewer
               image: __IMAGE_FULL_NAME__
               imagePullPolicy: Always
               env:
               - name: APP_SENTRYDSN
                 value: __SENTRY_DSN__
-              - name: APP_DB_DBNAME
-                value: ncovis
-              - name: APP_DB_URI
-                value: mongodb://mongodb:27017/
-              - name: APP_NLP_ADDRESS
-                value: nlp-api:12377
-              - name: APP_SPIDER_DELAY
-                value: "800"
-              - name: APP_SPIDER_MAXTOPICS
-                value: "10"
-              - name: APP_SPIDER_MAXPAGES
-                value: "20"
-              - name: spider.redis.address
+              - name: APP_REDIS_ADDRESS
                 value: redis:6379
-              - name: spider.redis.prefix
+              - name: APP_REDIS_PREFIX
                 value: __REDIS_PREFIX__
           restartPolicy: OnFailure

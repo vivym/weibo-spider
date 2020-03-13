@@ -11,10 +11,10 @@ endif
 LDFLAGS += -w -s
 LDFLAGS += -X main.version=${VERSION} -X main.commitHash=${COMMIT_HASH} -X main.buildDate=${BUILD_DATE}
 
-BUILD_PARAMS = -a -ldflags "${LDFLAGS}" -o build/weibo-spider cmd/weibo-spider/*.go
+BUILD_PARAMS = -a -ldflags "${LDFLAGS}" -o build/weibo-cookie-renewer cmd/weibo-cookie-renewer/*.go
 
 REGISTRY_URL = registry.cn-beijing.aliyuncs.com/public-api/
-IMAGE_NAME = weibo-spider
+IMAGE_NAME = weibo-cookie-renewer
 IMAGE_VER = ${VERSION}-${COMMIT_HASH}
 IMAGE_FULL_NAME = ${REGISTRY_URL}${IMAGE_NAME}:${IMAGE_VER}
 

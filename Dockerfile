@@ -1,5 +1,5 @@
 FROM scratch
 
-COPY weibo-spider /
+COPY weibo-cookie-renewer /
 
-ENTRYPOINT ["/weibo-spider"]
+ENTRYPOINT ["/weibo-cookie-renewer"]
