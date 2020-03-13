@@ -7,6 +7,7 @@ metadata:
     app: weibo-spider
 spec:
   schedule: "0 */2 * * *"
+  successfulJobsHistoryLimit: 0
   jobTemplate:
     spec:
       template:
