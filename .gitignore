@@ -1,0 +1,8 @@
+### Project ###
+/build
+
+### PyCharm ###
+/.idea
+
+### macOS ###
+.DS_Store
