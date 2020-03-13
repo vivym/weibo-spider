@@ -35,8 +35,8 @@ spec:
                 value: "10"
               - name: APP_SPIDER_MAXPAGES
                 value: "20"
-              - name: spider.redis.address
+              - name: APP_REDIS_ADDRESS
                 value: redis:6379
-              - name: spider.redis.prefix
+              - name: APP_REDIS_PREFIX
                 value: __REDIS_PREFIX__
           restartPolicy: OnFailure

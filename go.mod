@@ -7,14 +7,12 @@ require (
 	emperror.dev/errors v0.7.0
 	github.com/Kamva/mgm/v2 v2.0.0
 	github.com/PuerkitoBio/goquery v1.5.1
-	github.com/chromedp/cdproto v0.0.0-20200209033844-7e00b02ea7d2
-	github.com/chromedp/chromedp v0.5.3
-	github.com/getsentry/sentry-go v0.5.1
 	github.com/go-redis/redis/v7 v7.2.0
 	github.com/go-resty/resty/v2 v2.2.0
-	github.com/gobwas/ws v1.0.3 // indirect
 	github.com/golang/protobuf v1.3.5
-	github.com/mailru/easyjson v0.7.1 // indirect
+	github.com/google/go-cmp v0.4.0 // indirect
+	github.com/onsi/ginkgo v1.10.3 // indirect
+	github.com/onsi/gomega v1.7.1 // indirect
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.6.2
