@@ -7,6 +7,7 @@ metadata:
     app: weibo-cookie-renewer
 spec:
   schedule: "30 * * * *"
+  successfulJobsHistoryLimit: 0
   jobTemplate:
     spec:
       template:
