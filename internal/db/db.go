@@ -6,5 +6,5 @@ import (
 )
 
 func SetupDB(config Config) error {
-	return mgm.SetDefaultConfig(nil, config.DBName, options.Client().ApplyURI(config.DBName))
+	return mgm.SetDefaultConfig(nil, config.DBName, options.Client().ApplyURI(config.URI))
 }
