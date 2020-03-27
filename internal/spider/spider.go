@@ -62,6 +62,11 @@ func (s *Spider) Run() int {
 		return 0
 	}
 
+	if err := mgm.Coll(hotTopicList).Create(hotTopicList); err != nil {
+		s.logger.Error("insert hot list error: " + err.Error())
+		return -1
+	}
+
 	weiboHotTopics := model.WeiboHotTopics{
 		Time: int32(time.Now().Unix()),
 	}
@@ -103,11 +108,6 @@ func (s *Spider) Run() int {
 
 	if err := mgm.Coll(&weiboHotTopics).Create(&weiboHotTopics); err != nil {
 		s.logger.Error("insert hot topics error: " + err.Error())
-		return -1
-	}
-
-	if err := mgm.Coll(hotTopicList).Create(hotTopicList); err != nil {
-		s.logger.Error("insert hot list error: " + err.Error())
 		return -1
 	}
 
