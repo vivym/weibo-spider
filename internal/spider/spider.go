@@ -62,7 +62,9 @@ func (s *Spider) Run() int {
 		return 0
 	}
 
-	var weiboHotTopics model.WeiboHotTopics
+	weiboHotTopics := model.WeiboHotTopics{
+		Time: int32(time.Now().Unix()),
+	}
 	var sentences []string
 	for _, hotTopic := range hotTopicList.Data {
 		if hotTopic.Heat == 0 {
